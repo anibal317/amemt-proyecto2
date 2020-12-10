@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../assets/img/ciba 90x92.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <title>Balances</title>
+
+
+
+</head>
+
+<body>
+  <div class="row basic">
+    <div class="col header bg-dark header">
+      <nav class="navbar navbar-expand-lg navbar-dark ">
+        <a class="navbar-brand logo" href="../index.html"><img class="logo" src="/assets/img/ciba 90x92.jpg"
+            alt="logo_CiBA"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Nosotros
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="history.html">Historia</a></li>
+                <li>
+                  <a class="dropdown-item" href="start_archery.html">Inicio al tiro con arco</a>
+                </li>
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#">Comisión Directiva</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="financial_accounts.html">Balances</a></li>
+                    <li><a class="dropdown-item" href="board_members.html">Integrantes</a></li>
+                    <!-- <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#"
+                                  >Submenu 2</a
+                                >
+                                <ul class="dropdown-menu">
+                                  <li>
+                                    <a class="dropdown-item" href="#">Subsubmenu2</a>
+                                  </li>
+                                  <li>
+                                    <a class="dropdown-item" href="#">Subsubmenu2</a>
+                                  </li>
+                                </ul>
+                              </li> -->
+                  </ul>
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#">Torneos</a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="indoor.html">Sala (Indoor)</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="outdoor.html">Fita (Outdoor)</a>
+                    </li>
+                  </ul>
+                </li>
+            </li>
+          </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="news.html">Noticias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="enroll.html">Inscripciones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact_us.html">Contactenos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="under.html" tabindex="-1" aria-disabled="true">Login</a>
+          </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="content scroll">
+    <!-- Active Ffilters  -->
+    <div class="filter-container ">
+      Activar Filtros
+      <label class="switch">
+        <input type="checkbox" id="activeFilter">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <!-- Filters -->
+    <div class="list-filters filter-display-none" id="showFilters">
+      <select name="filters" id="filters" class="mySelect">
+        <option value="selectAction">------</option>
+        <option value="month">Mes</option>
+        <option value="year">Año</option>
+      </select>
+      <input type="text" id="searchByFilter" class="input-search">
+      <button class="btn btn-dark btn-search" id="btnBuscar">Buscar</button>
+    </div>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      <i class="far fa-plus-square"></i> Agregar elemento
+    </button>
+
+    <table class="table custom-table table-striped">
+
+      <thead>
+        <tr>
+          <th scope="col">Mes</th>
+          <th scope="col">Año</th>
+          <th scope="col">Monto inicial</th>
+          <th scope="col">Monto Final</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+
+
+  </div>
+
+  <!-- Add Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar Balance mensual</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="control-group">
+            <div>
+              <label for="month">Mes</label>
+              <input type="text" id="month" autocomplete="off">
+            </div>
+            <div>
+              <label for="year">Año</label>
+              <input type="text" id="year" autocomplete="off">
+            </div>
+            <div>
+              <label for="initialAmount">Monto Inicial</label>
+              <input type="text" id="initialAmount" autocomplete="off">
+            </div>
+            <div>
+              <label for="finalAmount">Monto Final</label>
+              <input type="text" id="finalAmount" autocomplete="off">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary acciones" data-action="add" id="btnAdd"
+            data-dismiss="modal">Guardar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="delteModalLabel">Eliminar balance mensual</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="data"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary acciones" data-action="delete" id="btnDelete"
+            data-dismiss="modal">Eliminar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Editar balance mensual</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="control-group">
+          <div>
+            <label for="edit-month">Mes</label>
+            <input type="text" id="edit-month" autocomplete="off">
+          </div>
+          <div>
+            <label for="edit-year">Año</label>
+            <input type="text" id="edit-year" autocomplete="off">
+          </div>
+          <div>
+            <label for="edit-initialAmount">Monto Inicial</label>
+            <input type="text" id="edit-initialAmount" autocomplete="off">
+          </div>
+          <div>
+            <label for="edit-finalAmount">Monto Final</label>
+            <input type="text" id="edit-finalAmount" autocomplete="off">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary acciones" data-action="edit" id="btnEdit"
+            data-dismiss="modal">Editar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ProgessBar Modal -->
+  <div class="modal fade" id="progessBarModal" tabindex="-1" aria-labelledby="progressVarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="pregresBarModalLabel">Cargando</h5>
+        </div>
+        <!-- Body del modal -->
+        <div class="modal-body">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated barrita" role="progressbar"
+              aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="barrita"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="row basic bg-color-blue">
+    <div class="col footer">
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="copy bg-color-dark-blue">
+      Copyright © Todos los derechos reservados
+    </div>
+  </div>
+
+
+
+  <script type="text/javascript" src="../assets/js/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript" src="../assets/js/popper.min.js"></script>
+  <script type="text/javascript" src="../assets/bootstrap/js/bootstrap.js"></script>
+  <script type="text/javascript" src="../assets/bootstrap/js/bootstrap.bundle.js"></script>
+  <script type="text/javascript" src="../assets/js/getDomElements.js"></script>
+  <script type="text/javascript" src="../assets/js/datos.js"></script>
+  <script type="text/javascript" src="../assets/js/main.js"></script>
+</body>
+
+</html>
