@@ -2,6 +2,7 @@ function actions(e) {
     jQuery.noConflict();
     switch (e.target.dataset.action) {
         case "loadEdit":
+
             editMonth.value = itemsTable[getIndexOf(itemsTable,parseInt(e.target.dataset.internalid))].mes;
             editYear.value = itemsTable[getIndexOf(itemsTable,parseInt(e.target.dataset.internalid))].anio;
             editInitialAmount.value = itemsTable[getIndexOf(itemsTable,parseInt(e.target.dataset.internalid))].start;
@@ -9,15 +10,15 @@ function actions(e) {
             document.getElementById("btnEdit").setAttribute("data-elemento", getIndexOf(itemsTable,parseInt(e.target.dataset.internalid)));
             break;
         case "edit":
+            mostrarCerrarBarrita(2);
             itemsTable[e.target.dataset.elemento].mes = editMonth.value;
             itemsTable[e.target.dataset.elemento].anio = editYear.value;
             itemsTable[e.target.dataset.elemento].start = editInitialAmount.value;
             itemsTable[e.target.dataset.elemento].end = editFinalAmount.value;
 
             document.getElementById("btnEdit").setAttribute("data-elemento", e.target.dataset.id);
-            createRow(itemsTable);
+            
 
-            mostrarCerrarBarrita(2);
             break;
         case "loadDelete":
 
@@ -26,10 +27,10 @@ function actions(e) {
             break;
         case "delete":
             itemsTable.splice(getIndexOf(itemsTable,parseInt(e.target.dataset.internalid)), 1);
-            createRow(itemsTable);
+            
             mostrarCerrarBarrita(2);
             resetFilters();
-            createRow(itemsTable);
+            
             break;
         case "add":
 
@@ -46,7 +47,7 @@ function actions(e) {
                 end: parseInt(finalAmount)
             });
 
-            createRow(itemsTable);
+            
             mostrarCerrarBarrita(2);
             clearInputs();
 
@@ -166,7 +167,7 @@ function mostrarCerrarBarrita(vueltas) {
 
             clearInterval(intervalo);
             jQuery("#progessBarModal").modal("hide");
-
+            createRow(itemsTable);
         }
     }, tiempoFin);
 };
