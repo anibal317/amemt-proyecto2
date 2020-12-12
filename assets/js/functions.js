@@ -25,8 +25,7 @@ function actions(e) {
             btnModalDelete(e.target.dataset.id, e.target.dataset.internalid);
             break;
         case "delete":
-
-            itemsTable.splice(getIndexOf(itemsTable,e.target.dataset.internalid), 1);
+            itemsTable.splice(getIndexOf(itemsTable,parseInt(e.target.dataset.internalid)), 1);
             createRow(itemsTable);
             mostrarCerrarBarrita(2);
             resetFilters();
